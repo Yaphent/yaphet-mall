@@ -1,36 +1,36 @@
-server:
-  port: 8004
-
-# mysql
-spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    #MySQL配置
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.177.101:3306/mall-pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: root
-  cloud:
-    #服务注册发现的地址：nacos
-    nacos:
-      server-addr: 192.168.177.101:8848
-  application:
-    name: mall-product
-
-mybatis-plus:
-  global-config:
-    db-config:
-      id-type: auto
-  mapper-locations: classpath:mapper/**/*.xml
-
-
-pagehelper:
-  reasonable: true
-  supportMethodsArguments: true
-  params: count=countSql
-
-
-#指定数据库，可选值有【mysql、oracle、sqlserver、postgresql、mongodb】
-renren:
-  database: mysql
-
+#server:
+#  port: 8004
+#
+## mysql
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    #MySQL配置
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.177.101:3306/mall-pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: root
+#  cloud:
+#    #服务注册发现的地址：nacos
+#    nacos:
+#      server-addr: 192.168.177.101:8848
+#  application:
+#    name: mall-product
+#
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      id-type: auto
+#  mapper-locations: classpath:mapper/**/*.xml
+#
+#
+#pagehelper:
+#  reasonable: true
+#  supportMethodsArguments: true
+#  params: count=countSql
+#
+#
+##指定数据库，可选值有【mysql、oracle、sqlserver、postgresql、mongodb】
+#renren:
+#  database: mysql
+#

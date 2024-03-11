@@ -6,6 +6,7 @@ import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,10 +28,15 @@ import com.yaphet.mall.common.utils.R;
  * @email 764136083@qq.com
  * @date 2024-03-10 16:15:23
  */
+@RefreshScope
 @RestController
 @RequestMapping("order/order")
-@RefreshScope
 public class OrderController {
+    @Value("${order.name}")
+    private String name;
+    @Value("${order.age}")
+    private String age;
+
     @Autowired
     private OrderService orderService;
 
@@ -95,4 +101,8 @@ public class OrderController {
         return R.ok();
     }
 
+    @RequestMapping("/getXiaoHong")
+    public R getXiaoHong(){
+        return R.ok().put("name",name).put("age",age);
+    }
 }
