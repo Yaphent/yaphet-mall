@@ -10,6 +10,12 @@ spring:
     url: jdbc:mysql://192.168.177.101:3306/mall-wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  cloud:
+    #服务注册发现的地址：nacos
+    nacos:
+      server-addr: 192.168.177.101:8848
+  application:
+    name: mall-ware
 
 mybatis-plus:
   global-config:
