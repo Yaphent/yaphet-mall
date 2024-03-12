@@ -36,7 +36,7 @@
 		<fastjson.version>1.2.79</fastjson.version>
 		<hutool.version>4.1.1</hutool.version>
 		<lombok.version>1.18.24</lombok.version>
-		<spring-cloud.version>2021.0.5</spring-cloud.version>
+		<spring-cloud.version>2020.0.1</spring-cloud.version>
 		<!--wagon plugin 配置-->
 		<service-path>/work/renren</service-path>
 		<pack-name>${project.artifactId}-${project.version}.jar</pack-name>
@@ -68,6 +68,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>-->
+		<dependency>
+			<groupId>com.yaphet</groupId>
+			<artifactId>mall-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.baomidou</groupId>
+					<artifactId>mybatis-plus</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mybatis.spring.boot</groupId>
+					<artifactId>mybatis-spring-boot-starter</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

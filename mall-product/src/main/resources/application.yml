@@ -34,3 +34,13 @@
 #renren:
 #  database: mysql
 #
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: route-renren
+          uri: lb://renren-fast
+          predicates:
+            - Path=/app/**
+          filters:
+            - RewritePath=/app/?(?<segment>.*), /renren-fast/$\{segment}
